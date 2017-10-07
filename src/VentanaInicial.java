@@ -1,14 +1,16 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.*;
+
 import javax.swing.*;
 
 public class VentanaInicial extends JFrame {
-	public ArrayList<Persona> listPersona;
+	public LinkedHashMap listPersona;
 	PanelCentral obj_panelcentral;
 		
 	public VentanaInicial() {
 		super("Mi ventana principal");
-		listPersona = new ArrayList<Persona>();
+		listPersona = new LinkedHashMap();
 		inicio();
 		componente();
 		pack();
@@ -36,7 +38,7 @@ public class VentanaInicial extends JFrame {
 	
 	public void  agregarPersona(String _nombre, String _apellido) {
 		Persona obj = new Persona(_nombre,_apellido);
-		listPersona.add(obj);
+		listPersona.put(_nombre,obj);
 		actualizarTabla();
 	}
 	
